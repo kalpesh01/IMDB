@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row bg-warning sticky-top" style="height: 55px">
+    <div class="col d-flex align-items-center">
+      <fa-icon [icon]="faAirFreshener" style="font-size: 28px; margin-right: 8px"></fa-icon>
+      Orange App
+    </div>
+    <div class="col d-flex justify-content-end align-items-center">
+      <a class="btn btn-outline-light mr-1" routerLink="/home/">Personal</a>
+      <a class="btn btn-outline-light mr-1" routerLink="/home/education">
+        Education
+      </a>
+      <a class="btn btn-outline-light mr-1" routerLink="/home/contact-us">
+        {{sessId}}
+      </a>
+
+      <button class="btn btn-outline-light mr-1" (click)="processLogout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

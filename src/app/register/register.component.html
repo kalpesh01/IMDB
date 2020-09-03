@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div class="col bg-secondary d-flex flex-column justify-content-center align-items-center">
+      <div class=" d-flex flex-column">
+        <h2 style="color:bisque">Back To Login Page?</h2>
+
+
+        <a routerLink="/login" type="button" class="btn btn-primary">Login Here</a>
+      </div>
+    </div>
+
+
+    <!-- id name password email birtdate mobno -->
+
+
+    <!-- Right Block-->
+    <div class="col bg-light d-flex flex-column justify-content-center align-items-center" [formGroup]="fbFormGroup">
+      <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+        A simple danger alert—check it out!
+      </div>
+
+      <div class="h4">Application Register</div>
+
+      <div>
+        <input type="text" placeholder="User id" class="form-control" formControlName="id" />
+      </div>
+
+      <div>
+        <input type="text" placeholder="Enter Username" class="form-control" formControlName="name" />
+      </div>
+
+      <div class="mt-1">
+        <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" />
+      </div>
+
+      <div class="mt-1 ">
+        <input type="email" placeholder="Enter Email" (blur)="checkEmail()" class="form-control"
+          formControlName="email" />
+        <div class="" role="alert" *ngIf="isValidEmail" style="color: red;">
+          A simple danger alert—check it out!
+        </div>
+      </div>
+
+      <div class="mt-1">
+        <input type="text" placeholder="yyyy-mm-dd" class="form-control" formControlName="birthdate" />
+      </div>
+
+      <div class="mt-1">
+        <input type="text" placeholder="Enter Mobile" class="form-control" formControlName="mobile" />
+      </div>
+
+      <button class="btn btn-sm btn-primary mt-2 mb-2" [disabled]="!fbFormGroup.valid" (click)="registerHere()">
+        Register Here
+      </button>
+
+
+    </div>
+  </div>
+</div>
